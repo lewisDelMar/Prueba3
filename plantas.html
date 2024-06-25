@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SotiPlants</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside>
+            <header>
+                <h1 class="logo">SotiPlants</h1>
+                <img class="logo_imagen" src="images/logo_imagen.png" alt="">
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true"><i
+                                class="bi bi-hand-index-thumb-fill"></i>Inicio</a>
+                    </li>
+                    <li>
+                        <a href="plantas.html" class="btn btn-primary btn-lg active" role="button"
+                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Plantas</a>
+                    </li>
+                    <li>
+                        <a href="macetas.html" class="btn btn-primary btn-lg enabled" role="button"
+                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Macetas</a>
+                    </li>
+                    <li>
+                        <a href="accesorios.html" class="btn btn-primary btn-lg enabled" role="button"
+                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Accesorios</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html" class="btn btn-primary btn-lg enabled" role="button"
+                            aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
+                    </li>
+                    <li>
+                        <a href="carrito.html" class="btn btn-primary btn-lg enabled" role="button"
+                            aria-disabled="true" id="btn-carrito"><i class="bi bi-basket"></i>Carrito</a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="texto-footer">©SotiPlants</p>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="titulo-principal">Plantas</h2>
+            <p class="text-general">Bienvenido a nuestra categoría de Plantas, donde encontrarás helechos y suculentas
+                exóticas para decorar tu hogar u oficina. Los helechos son ideales para interiores, prefieren ambientes
+                húmedos y evitan corrientes de aire. Las suculentas, resistentes y de bajo mantenimiento, requieren poca
+                agua y luz solar directa. Ofrecemos plantas de alta calidad con recomendaciones de cuidado detalladas,
+                listas para agregar un toque especial a tu espacio.</p>
+                <div class="contenedor-productos">
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/cotyledon-tometosa-variegado.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Cotyledon Tometosa Variegado</h4>
+                            <p class="producto-precio">$60.000</p>
+                        </div>
+                    </div>
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/echeveria-black-prince.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Echevaria Black Prince</h4>
+                            <p class="producto-precio">$6.000</p>
+                        </div>
+                    </div>
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/echeveria_rainbow.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Echevaria <br>Rainbow</h4>
+                            <p class="producto-precio">$36.000</p>
+                        </div>
+                    </div>
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/echeverria_carrusel.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Echevaria <br>Carrusel</h4>
+                            <p class="producto-precio">$123.000</p>
+                        </div>
+                    </div>
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/helecho-arroz.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Helecho <br>Arroz</h4>
+                            <p class="producto-precio">$3.000</p>
+                        </div>
+                    </div>
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/helecho-blechnum-chilensis.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Helecho Blechnum Chilensis</h4>
+                            <p class="producto-precio">$12.000</p>
+                        </div>
+                    </div>
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/helecho-meyeri.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Helecho <br>Meyeri</h4>
+                            <p class="producto-precio">$9.000</p>
+                        </div>
+                    </div>
+                    <div class="productos">
+                        <img class="producto-imagen" src="plantas/helecho_dedudosaprocedencia.jpg" alt="">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">Helecho <br> Mágico</h4>
+                            <p class="producto-precio">$180.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="form-group" id="themeSelector">
+        <label for="theme">Selecciona un color de fondo:</label>
+        <select class="form-control" id="theme">
+            <option value="default">Claro</option>
+            <option value="dark">Oscuro</option>
+        </select>
+    </div>
+</body>
+
+</html>
