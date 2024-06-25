@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </head>
 
 <body>
@@ -20,36 +21,35 @@
             <!-- logo de la pagina -->
             <header>
                 <h1 class="logo">SotiPlants</h1>
-                <img class="logo_imagen" src="images/logo_imagen.png" alt="">
+                <img class="logo_imagen" src="{% static 'images/logo_imagen.png' %}" alt="">
             </header>
             <!-- menu de navegacion en un aside -->
-                <ul class="menu">
-                    <li>
-                        <a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-disabled="true"><i
-                                class="bi bi-hand-index-thumb-fill"></i>Inicio</a>
-                    </li>
-                    <li>
-                        <a href="plantas.html" class="btn btn-primary btn-lg enabled" role="button"
-                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Plantas</a>
-                    </li>
-                    <li>
-                        <a href="macetas.html" class="btn btn-primary btn-lg enabled" role="button"
-                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Macetas</a>
-                    </li>
-                    <li>
-                        <a href="accesorios.html" class="btn btn-primary btn-lg enabled" role="button"
-                            aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Accesorios</a>
-                    </li>
-                    <li>
-                        <a href="contacto.html" class="btn btn-primary btn-lg enabled" role="button"
-                            aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
-                    </li>
-                    <li>
-                        <a href="carrito.html" class="btn btn-primary btn-lg enabled" role="button"
-                            aria-disabled="true" id="btn-carrito"><i class="bi bi-basket"></i>Carrito</a>
-                    </li>
-                </ul>
-            </nav>
+            <ul class="menu">
+                <li>
+                    <a href="{% url 'index' %}" class="btn btn-primary btn-lg active" role="button" aria-disabled="true"><i
+                            class="bi bi-hand-index-thumb-fill"></i>Inicio</a>
+                </li>
+                <li>
+                    <a href="{% url 'plantas' %}" class="btn btn-primary btn-lg enabled" role="button"
+                        aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Plantas</a>
+                </li>
+                <li>
+                    <a href="{% url 'macetas' %}" class="btn btn-primary btn-lg enabled" role="button"
+                        aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Macetas</a>
+                </li>
+                <li>
+                    <a href="{% url 'accesorios' %}" class="btn btn-primary btn-lg enabled" role="button"
+                        aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Accesorios</a>
+                </li>
+                <li>
+                    <a href="{% url 'contacto' %}" class="btn btn-primary btn-lg enabled" role="button"
+                        aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
+                </li>
+                <li>
+                    <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg enabled" role="button"
+                        aria-disabled="true" id="btn-carrito"><i class="bi bi-basket"></i>Carrito</a>
+                </li>
+            </ul>
             <footer>
                 <p class="texto-footer">©SotiPlants</p>
             </footer>
@@ -76,7 +76,7 @@
                                 <h3>Nuestra Tienda Física</h3>
                             </div>
                             <div class="header-img">
-                                <img src="images/tienda_fisica.jpg" alt="">
+                                <img src="{% static 'images/tienda_fisica.jpg' %}" alt="">
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                 <h3>Tenemos lo que deseas</h3>
                             </div>
                             <div class="header-img">
-                                <img src="images/conjunto_plantas.jpg" alt="">
+                                <img src="{% static 'images/conjunto_plantas.jpg' %}" alt="">
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                                 <h3>Decora con Sotiplants</h3>
                             </div>
                             <div class="header-img">
-                                <img src="images/platassimples.jpg" alt="">
+                                <img src="{% static 'images/platassimples.jpg' %}" alt="">
                             </div>
                         </div>
                     </div>
