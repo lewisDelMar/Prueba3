@@ -11,7 +11,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </head>
 
 <body>
@@ -19,32 +19,32 @@
         <aside>
             <header>
                 <h1 class="logo">SotiPlants</h1>
-                <img class="logo_imagen" src="images/logo_imagen.png" alt="">
+                <img class="logo_imagen" src="{% static 'images/logo_imagen.png' %}" alt="">
             </header>
             <nav>
                 <ul class="menu">
                     <li>
-                        <a href="index.html" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true"><i
+                        <a href="{% url 'index' %}" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true"><i
                                 class="bi bi-hand-index-thumb-fill"></i>Inicio</a>
                     </li>
                     <li>
-                        <a href="plantas.html" class="btn btn-primary btn-lg active" role="button"
+                        <a href="{% url 'plantas' %}" class="btn btn-primary btn-lg active" role="button"
                             aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Plantas</a>
                     </li>
                     <li>
-                        <a href="macetas.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'macetas' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Macetas</a>
                     </li>
                     <li>
-                        <a href="accesorios.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'accesorios' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Accesorios</a>
                     </li>
                     <li>
-                        <a href="contacto.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'contacto' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
                     </li>
                     <li>
-                        <a href="carrito.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true" id="btn-carrito"><i class="bi bi-basket"></i>Carrito</a>
                     </li>
                 </ul>
@@ -62,56 +62,56 @@
                 listas para agregar un toque especial a tu espacio.</p>
                 <div class="contenedor-productos">
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/cotyledon-tometosa-variegado.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/cotyledon-tometosa-variegado.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Cotyledon Tometosa Variegado</h4>
                             <p class="producto-precio">$60.000</p>
                         </div>
                     </div>
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/echeveria-black-prince.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/echeveria-black-prince.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Echevaria Black Prince</h4>
                             <p class="producto-precio">$6.000</p>
                         </div>
                     </div>
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/echeveria_rainbow.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/echeveria_rainbow.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Echevaria <br>Rainbow</h4>
                             <p class="producto-precio">$36.000</p>
                         </div>
                     </div>
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/echeverria_carrusel.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/echeverria_carrusel.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Echevaria <br>Carrusel</h4>
                             <p class="producto-precio">$123.000</p>
                         </div>
                     </div>
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/helecho-arroz.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/helecho-arroz.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Helecho <br>Arroz</h4>
                             <p class="producto-precio">$3.000</p>
                         </div>
                     </div>
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/helecho-blechnum-chilensis.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/helecho-blechnum-chilensis.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Helecho Blechnum Chilensis</h4>
                             <p class="producto-precio">$12.000</p>
                         </div>
                     </div>
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/helecho-meyeri.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/helecho-meyeri.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Helecho <br>Meyeri</h4>
                             <p class="producto-precio">$9.000</p>
                         </div>
                     </div>
                     <div class="productos">
-                        <img class="producto-imagen" src="plantas/helecho_dedudosaprocedencia.jpg" alt="">
+                        <img class="producto-imagen" src="{% static 'plantas/helecho_dedudosaprocedencia.jpg' %}" alt="">
                         <div class="producto-detalles">
                             <h4 class="producto-titulo">Helecho <br> Mágico</h4>
                             <p class="producto-precio">$180.000</p>
