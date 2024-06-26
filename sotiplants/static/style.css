@@ -291,8 +291,6 @@ main {
 }
 
 .producto-detalles {
-    max-width: 264.64px;
-    max-height: 264.64px;
     background-color: #51dc78;
     color: #FFF;
     padding: .5rem;
@@ -411,6 +409,7 @@ main.default {
 form {
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
     gap: 1rem;
 }
 
@@ -448,4 +447,16 @@ form {
     bottom: 30px;
     right: 100px;
     cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

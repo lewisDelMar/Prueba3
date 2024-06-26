@@ -10,9 +10,11 @@ class Productos(models.Model):
 
 
 class Contacto(models.Model):
-    id_contacto     = models.AutoField(db_column = 'idContacto', primary_key=True)
     nombrepri       = models.CharField(max_length=50)
     apellidopa      = models.CharField(max_length=50)
     telefono        = models.IntegerField()
     email           = models.EmailField()
     mensaje         = models.TextField()
+    
+    def __str__(self):
+        return f"{self.nombrepri} {self.apellidopa}"
