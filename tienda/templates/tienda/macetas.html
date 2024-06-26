@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </head>
 
 <body>
@@ -20,32 +20,32 @@
         <aside>
             <header>
                 <h1 class="logo">SotiPlants</h1>
-                <img class="logo_imagen" src="images/logo_imagen.png" alt="">
+                <img class="logo_imagen" src="{% static 'images/logo_imagen.png' %}" alt="">
             </header>
             <nav>
                 <ul class="menu">
                     <li>
-                        <a href="index.html" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true"><i
+                        <a href="{% url 'index' %}" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true"><i
                                 class="bi bi-hand-index-thumb-fill"></i>Inicio</a>
                     </li>
                     <li>
-                        <a href="plantas.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'plantas' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Plantas</a>
                     </li>
                     <li>
-                        <a href="macetas.html" class="btn btn-primary btn-lg active" role="button"
+                        <a href="{% url 'macetas' %}" class="btn btn-primary btn-lg active" role="button"
                             aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Macetas</a>
                     </li>
                     <li>
-                        <a href="accesorios.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'accesorios' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true"><i class="bi bi-hand-index-thumb"></i>Accesorios</a>
                     </li>
                     <li>
-                        <a href="contacto.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'contacto' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true"><i class="bi bi-envelope"></i>Contacto</a>
                     </li>
                     <li>
-                        <a href="carrito.html" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg enabled" role="button"
                             aria-disabled="true" id="btn-carrito"><i class="bi bi-basket"></i>Carrito</a>
                     </li>
                 </ul>
@@ -64,28 +64,28 @@
                 naturaleza en tu hogar u oficina de manera elegante y armoniosa.</p>
             <div class="contenedor-productos">
                 <div class="productos">
-                    <img class="producto-imagen" src="macetas/macetero_vietnamita_negro39x70.jpg" alt="">
+                    <img class="producto-imagen" src="{% static 'macetas/macetero_vietnamita_negro39x70.jpg' %}" alt="">
                     <div class="producto-detalles">
                         <h4 class="producto-titulo">Macetero Vietnamita Black 39x70</h4>
                         <p class="producto-precio">$60.000</p>
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="producto-imagen" src="macetas/macetero_vietnamita_rojo39x70.jpg" alt="">
+                    <img class="producto-imagen" src="{% static 'macetas/macetero_vietnamita_rojo39x70.jpg' %}" alt="">
                     <div class="producto-detalles">
                         <h4 class="producto-titulo">Macetero Vietnamita Red 39x70</h4>
                         <p class="producto-precio">$60.000</p>
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="producto-imagen" src="macetas/macetero_vietnamita_azul39x70.jpg" alt="">
+                    <img class="producto-imagen" src="{% static 'macetas/macetero_vietnamita_azul39x70.jpg' %}" alt="">
                     <div class="producto-detalles">
                         <h4 class="producto-titulo">Macetero Vietnamita Blue 39x70</h4>
                         <p class="producto-precio">$60.000</p>
                     </div>
                 </div>
                 <div class="productos">
-                    <img class="producto-imagen" src="macetas/macetero_riscatto_negro40x36.jpg" alt="">
+                    <img class="producto-imagen" src="{% static 'macetas/macetero_riscatto_negro40x36.jpg' %}" alt="">
                     <div class="producto-detalles">
                         <h4 class="producto-titulo">Macetero Riscatto Black 40x36cm</h4>
                         <p class="producto-precio">$42.000</p>
