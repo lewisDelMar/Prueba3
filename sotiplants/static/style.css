@@ -291,6 +291,8 @@ main {
 }
 
 .producto-detalles {
+    max-width: 264.64px;
+    max-height: 264.64px;
     background-color: #51dc78;
     color: #FFF;
     padding: .5rem;
