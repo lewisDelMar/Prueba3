@@ -60,66 +60,19 @@
                 húmedos y evitan corrientes de aire. Las suculentas, resistentes y de bajo mantenimiento, requieren poca
                 agua y luz solar directa. Ofrecemos plantas de alta calidad con recomendaciones de cuidado detalladas,
                 listas para agregar un toque especial a tu espacio.</p>
+
+
                 <div class="contenedor-productos">
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/cotyledon-tometosa-variegado.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Cotyledon Tometosa Variegado</h4>
-                            <p class="producto-precio">$60.000</p>
+                    {% for planta in plantas %}
+                        <div class="productos">
+                            <img class="producto-imagen" src="{{ planta.foto.url }}" alt="{{ planta.nombre }}">
+                            <div class="producto-detalles">
+                                <h4 class="producto-titulo">{{ planta.nombre_producto }}</h4>
+                                <p class="producto-precio">{{ planta.precio }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/echeveria-black-prince.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Echevaria Black Prince</h4>
-                            <p class="producto-precio">$6.000</p>
-                        </div>
-                    </div>
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/echeveria_rainbow.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Echevaria <br>Rainbow</h4>
-                            <p class="producto-precio">$36.000</p>
-                        </div>
-                    </div>
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/echeverria_carrusel.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Echevaria <br>Carrusel</h4>
-                            <p class="producto-precio">$123.000</p>
-                        </div>
-                    </div>
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/helecho-arroz.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Helecho <br>Arroz</h4>
-                            <p class="producto-precio">$3.000</p>
-                        </div>
-                    </div>
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/helecho-blechnum-chilensis.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Helecho Blechnum Chilensis</h4>
-                            <p class="producto-precio">$12.000</p>
-                        </div>
-                    </div>
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/helecho-meyeri.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Helecho <br>Meyeri</h4>
-                            <p class="producto-precio">$9.000</p>
-                        </div>
-                    </div>
-                    <div class="productos">
-                        <img class="producto-imagen" src="{% static 'plantas/helecho_dedudosaprocedencia.jpg' %}" alt="">
-                        <div class="producto-detalles">
-                            <h4 class="producto-titulo">Helecho <br> Mágico</h4>
-                            <p class="producto-precio">$180.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+                    {% endfor %}
+            </main>
     </div>
     <div class="form-group" id="themeSelector">
         <label for="theme">Selecciona un color de fondo:</label>

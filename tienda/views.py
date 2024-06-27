@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import ContactForm
 from django.http import HttpResponse
+from .models import Productos
 
 # Create your views here.
 
@@ -22,7 +23,8 @@ def contacto(request):
     return render(request, 'tienda/contacto.html', context)
 
 def accesorios(request):
-    context = {}
+    accesorio = Productos.objects.filter(id_tipo=3)
+    context = {'accesorio': accesorio}
     return render(request, 'tienda/accesorios.html', context)
 
 def carrito(request):
@@ -30,9 +32,11 @@ def carrito(request):
     return render(request, 'tienda/carrito.html', context)
 
 def macetas(request):
-    context = {}
+    macetas = Productos.objects.filter(id_tipo=2)
+    context = {'macetas' : macetas}
     return render(request, 'tienda/macetas.html', context)
 
 def plantas(request):
-    context = {}
+    plantas = Productos.objects.filter(id_tipo=1)
+    context = { 'plantas' : plantas}
     return render(request, 'tienda/plantas.html', context)

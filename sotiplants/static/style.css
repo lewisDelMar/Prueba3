@@ -300,6 +300,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    align-items: center; /* Asegura que el contenido se centre horizontalmente */
 }
 
 .text-general {
@@ -308,6 +309,10 @@ main {
 
 .productos-titulo {
     font-size: 1rem;
+    text-align: center; /* Centra el texto horizontalmente */
+    width: auto; /* Ajusta el ancho al contenido */
+    margin: 0 auto; /* Centra el elemento si es necesario */
+    padding: 0 10px; /* Añade un poco de padding para evitar que el texto toque los bordes */
 }
 
 /* temas selector */

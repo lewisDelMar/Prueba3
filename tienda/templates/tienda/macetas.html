@@ -55,42 +55,23 @@
             </footer>
         </aside>
         <main>
-            <h2 class="titulo-principal">Macetas</h2>
-            <p class="text-general">Bienvenido a nuestra categoría de Macetas, donde encontrarás una variedad de
-                opciones para realzar la belleza y salud de tus plantas. Elegir la maceta adecuada es crucial para el
-                crecimiento de tus plantas, proporcionando el soporte y entorno ideal. Ofrecemos macetas de diversos
-                tamaños, materiales y diseños, adecuadas para interiores y exteriores, todas diseñadas para asegurar
-                buena ventilación y drenaje. Nuestras macetas combinan funcionalidad y estética, integrando la
-                naturaleza en tu hogar u oficina de manera elegante y armoniosa.</p>
+        <h2 class="titulo-principal">Macetas</h2>
+        <p class="text-general">Bienvenido a nuestra categoría de Macetas, donde encontrarás una variedad de
+            opciones para realzar la belleza y salud de tus plantas. Elegir la maceta adecuada es crucial para el
+            crecimiento de tus plantas, proporcionando el soporte y entorno ideal. Ofrecemos macetas de diversos
+            tamaños, materiales y diseños, adecuadas para interiores y exteriores, todas diseñadas para asegurar
+            buena ventilación y drenaje. Nuestras macetas combinan funcionalidad y estética, integrando la
+            naturaleza en tu hogar u oficina de manera elegante y armoniosa.</p>
             <div class="contenedor-productos">
-                <div class="productos">
-                    <img class="producto-imagen" src="{% static 'macetas/macetero_vietnamita_negro39x70.jpg' %}" alt="">
-                    <div class="producto-detalles">
-                        <h4 class="producto-titulo">Macetero Vietnamita Black 39x70</h4>
-                        <p class="producto-precio">$60.000</p>
+                {% for maceta in macetas %}
+                    <div class="productos">
+                        <img class="producto-imagen" src="{{ maceta.foto.url }}" alt="{{ maceta.nombre }}">
+                        <div class="producto-detalles">
+                            <h4 class="producto-titulo">{{ maceta.nombre_producto }}</h4>
+                            <p class="producto-precio">{{ maceta.precio }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="productos">
-                    <img class="producto-imagen" src="{% static 'macetas/macetero_vietnamita_rojo39x70.jpg' %}" alt="">
-                    <div class="producto-detalles">
-                        <h4 class="producto-titulo">Macetero Vietnamita Red 39x70</h4>
-                        <p class="producto-precio">$60.000</p>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="producto-imagen" src="{% static 'macetas/macetero_vietnamita_azul39x70.jpg' %}" alt="">
-                    <div class="producto-detalles">
-                        <h4 class="producto-titulo">Macetero Vietnamita Blue 39x70</h4>
-                        <p class="producto-precio">$60.000</p>
-                    </div>
-                </div>
-                <div class="productos">
-                    <img class="producto-imagen" src="{% static 'macetas/macetero_riscatto_negro40x36.jpg' %}" alt="">
-                    <div class="producto-detalles">
-                        <h4 class="producto-titulo">Macetero Riscatto Black 40x36cm</h4>
-                        <p class="producto-precio">$42.000</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </main>
     </div>
