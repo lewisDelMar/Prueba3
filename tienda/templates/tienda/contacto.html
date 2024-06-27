@@ -60,31 +60,31 @@
             <h2 class="titulo-principal">Formulario de Contacto</h2>
             <p class="text-general">Si te ha gustado algun producto, no dudes en contactarnos vía Gmail O vía WhatsApp
             </p>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre*</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre">
+            {% if mensaje %}
+            <p>{{ mensaje }}</p>
+            {% endif %}
+            <form method="post">
+                
+                {% csrf_token %}
+                <div class="form-group" id="contactForm">
+                    Nombre
+                    {{ form.nombrepri }}
                 </div>
-
                 <div class="form-group">
-                    <label for="apellidoPaterno">Apellido Paterno*</label>
-                    <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno">
+                    Apellido
+                    {{ form.apellidopa }}
                 </div>
-
                 <div class="form-group">
-                    <label for="celular">Celular*</label>
-                    <input type="text" class="form-control" id="celular" name="celular">
+                    Telefono
+                    {{ form.telefono }}
                 </div>
-
                 <div class="form-group">
-                    <label for="email">Email*</label>
-                    <input type="text" class="form-control" id="email" name="email">
+                    Email
+                    {{ form.email }}
                 </div>
-
                 <div class="form-group">
-                    <label for="mensaje">Dejanos un mensaje con tus comentarios o con los productos que te han
-                        interesado! <br> Responderemos a la brevedad.</label>
-                    <textarea class="form-control" id="mensaje" name="mensaje" maxlength="400"></textarea>
+                    Mensaje
+                    {{ form.mensaje }}
                 </div>
 
                 <button type="submit" class="btn btn-success" id="btn-form">Enviar</button>

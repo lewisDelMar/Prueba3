@@ -291,8 +291,6 @@ main {
 }
 
 .producto-detalles {
-    max-width: 264.64px;
-    max-height: 264.64px;
     background-color: #51dc78;
     color: #FFF;
     padding: .5rem;
@@ -302,6 +300,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    align-items: center; /* Asegura que el contenido se centre horizontalmente */
 }
 
 .text-general {
@@ -310,6 +309,10 @@ main {
 
 .productos-titulo {
     font-size: 1rem;
+    text-align: center; /* Centra el texto horizontalmente */
+    width: auto; /* Ajusta el ancho al contenido */
+    margin: 0 auto; /* Centra el elemento si es necesario */
+    padding: 0 10px; /* Añade un poco de padding para evitar que el texto toque los bordes */
 }
 
 /* temas selector */
@@ -411,6 +414,7 @@ main.default {
 form {
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
     gap: 1rem;
 }
 
@@ -448,4 +452,16 @@ form {
     bottom: 30px;
     right: 100px;
     cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
