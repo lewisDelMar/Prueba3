@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import ContactForm
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Productos
+from .carrito import Carrito
 
 # Create your views here.
 
@@ -27,10 +28,6 @@ def accesorios(request):
     context = {'accesorio': accesorio}
     return render(request, 'tienda/accesorios.html', context)
 
-def carrito(request):
-    context = {}
-    return render(request, 'tienda/carrito.html', context)
-
 def macetas(request):
     macetas = Productos.objects.filter(id_tipo=2)
     context = {'macetas' : macetas}
@@ -40,3 +37,34 @@ def plantas(request):
     plantas = Productos.objects.filter(id_tipo=1)
     context = { 'plantas' : plantas}
     return render(request, 'tienda/plantas.html', context)
+
+def carrito(request):
+    carrito = Carrito(request)
+    total_carrito = sum(item['acumulado'] for item in carrito.carrito.values())
+    context = {
+        'total_carrito': total_carrito,
+    }
+    return render(request, 'tienda/carrito.html', context)
+
+def agregar_producto(request, producto_id):
+    carrito_instancia = Carrito(request)
+    producto = Productos.objects.get(id_produ=producto_id)
+    carrito_instancia.agregar(producto)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', 'index'))
+
+def eliminar_producto(request, producto_id):
+    carrito_instancia = Carrito(request)
+    producto = Productos.objects.get(id_produ=producto_id)
+    carrito_instancia.eliminar(producto)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', 'index'))
+
+def restar_producto(request, producto_id):
+    carrito_instancia = Carrito(request)
+    producto = Productos.objects.get(id_produ=producto_id)
+    carrito_instancia.restar(producto)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', 'index'))
+
+def limpiar_carrito(request):
+    carrito_instancia = Carrito(request)
+    carrito_instancia.limpiar()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', 'index'))

@@ -24,11 +24,11 @@
             </header>
                 <ul class="menu">
                     <li>
-                        <a href="{% url 'index' %}" class="btn btn-primary btn-lg enabled" role="button"
+                        <a href="{% url 'index' %}" class="btn btn-primary btn-lg enabled btn-general" role="button"
                             aria-disabled="true" id="btn-volver"><i class="bi bi-arrow-return-left"></i></i>Seguir Comprando</a>
                     </li>
                     <li>
-                        <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg active" role="button"
+                        <a href="{% url 'carrito' %}" class="btn btn-primary btn-lg active btn-general" role="button"
                             aria-disabled="true" id="btn-carrito2"><i class="bi bi-basket"></i>Carrito</a>
                     </li>
                 </ul>
@@ -40,8 +40,49 @@
         <main>
             <h2>Carrito</h2>
             <div class="contenedor-carrito">
-                <p class="carrito-vacio">No tienes productos en el carrito.</p>
-                <div class="carrito-productos"></div>
+                <div class="carrito-productos">
+                    {% if request.session.carrito %}
+                    {% for key, value in request.session.carrito.items %}
+                    <div class="carrito-producto">
+                        <div class="carrito-producto-foto">
+                            <small>Imagen</small>
+                            <img src="{{ value.foto.url }}" alt="{{ value.nombre }}">
+                        </div>
+                        <div class="carrito-producto-titulo">
+                            <small>Nombre</small>
+                            <h4>{{ value.nombre }}</h4>
+                        </div>
+                        <div class="carrito-producto-cantidad">
+                            <small>Cantidad</small>
+                            <h4>{{ value.cantidad }}</h4>
+                        </div>
+                        <div class="carrito-producto-precio">
+                            <small>Precio</small>
+                            <h4>${{ value.acumulado }}</h4>
+                        </div>
+                        <div class="carrito-producto-botones">
+                            <a href="{% url 'Add' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+                            <a href="{% url 'Sub' value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    {%else%}
+                    <p class="carrito-vacio">No tienes productos agregados.</p>
+                    {%endif%}
+                    {% if request.session.carrito %}
+                    <div class="carrito-acciones">
+                        <div class="carrito-acciones-izquierda">
+                            <a href="{%url 'CLS'%}" class="btn btn-danger" id="btn-vaciar">Vaciar Carrito</a>
+                        </div>
+                        <div class="carrito-acciones-derecha">
+                            <div class="carrito-acciones-total">
+                                <h4>Total del Carrito: ${{ total_carrito }}</h4>
+                            </div>
+                            <a href="#" class="btn btn-succes" id="btn-comprar">Comprar</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </main>
     </div>

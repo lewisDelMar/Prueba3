@@ -19,10 +19,6 @@ class TipoProducto(models.Model):
     def __str__(self):
         return self.nombre_tipo
 
-
-
-
-
 class Contacto(models.Model):
     nombrepri       = models.CharField(max_length=50)
     apellidopa      = models.CharField(max_length=50)
