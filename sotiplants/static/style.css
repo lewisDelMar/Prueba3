@@ -521,11 +521,11 @@ textarea {
     padding-right: 1.5rem;
 }
 
-.carrito-producto-foto{
-    width: 4rem;
-    border-radius: 1rem;
+.foto-carrito{
+    max-width: 4rem;
+    max-height: 4rem;
+    border-radius: 50%;
 }
-
 
 .carrito-producto-foto, .carrito-producto-titulo, .carrito-producto-cantidad, .carrito-producto-precio {
     flex: 1; 

@@ -45,8 +45,7 @@
                     {% for key, value in request.session.carrito.items %}
                     <div class="carrito-producto">
                         <div class="carrito-producto-foto">
-                            <small>Imagen</small>
-                            <img src="{{ value.foto.url }}" alt="{{ value.nombre }}">
+                            <img src="{{ value.foto }}" alt="{{ value.nombre }}" class="foto-carrito">
                         </div>
                         <div class="carrito-producto-titulo">
                             <small>Nombre</small>

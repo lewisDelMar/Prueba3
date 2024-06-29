@@ -11,7 +11,7 @@ class Carrito:
             self.carrito = self.session['carrito']
         else:
             self.carrito = carrito
-        
+
     def agregar(self, producto):
         id = str(producto.id_produ)
         if id not in self.carrito.keys():
@@ -20,7 +20,7 @@ class Carrito:
                 'nombre': producto.nombre_producto,
                 'acumulado': producto.precio,
                 'cantidad': 1,
-                'foto': producto.foto.url
+                'foto': producto.foto.url ,
             }
         else:
             self.carrito[id]['cantidad'] += 1
@@ -30,7 +30,7 @@ class Carrito:
     def guardar_carrito(self):
         self.session['carrito'] = self.carrito
         self.session.modified = True
-    
+
     def eliminar(self, producto):
         id = str(producto.id_produ)
         if id in self.carrito:

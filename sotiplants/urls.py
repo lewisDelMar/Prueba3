@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index , name='index'),
     path('agregar/<int:producto_id>/', agregar_producto, name='Add'),
-    #No se ocupa eliminar -> path('eliminar/<int:producto_id>/', eliminar_producto, name='Del'),
+    path('eliminar/<int:producto_id>/', eliminar_producto, name='Del'),
     path('restar/<int:producto_id>/', restar_producto, name='Sub'),
     path('limpiar/', limpiar_carrito, name='CLS'),
     path('tienda/',include('tienda.urls')),
